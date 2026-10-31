@@ -1,46 +1,62 @@
-# Gaurav Pandey — Hospitality Operations & Performance Consultant
+# IQA Hospitality Advisory — Independent Quality & Operations Advisory • Singapore
 
-A website built for **Gaurav Pandey**, Hospitality Operations & Performance Consultant based in Singapore, serving Southeast Asia.
+A modern web application built for **IQA Hospitality Advisory**, an independent hospitality quality audits, operational excellence, and leadership training advisory firm based in **Singapore**.
 
-> **Brand Positioning:** *"Better Operations. Better People. Better Guest Experiences."*
+> **Brand Positioning:** *"Better Operations. Better People. Better Guest Experiences."*  
+> **Aesthetic Design:** Inspired by the executive corporate aesthetic of **Headspring Executive** (Deep Navy `#011e41`, Vivid Teal `#00afaa`, Warm Alabaster, and Crisp White).
 
 ---
 
 ## 🌟 Key Features
 
-- **Luxury Design System**: Midnight slate navy & gold palette with glassmorphic cards, fluid typography, and Google Fonts (`Cinzel`, `Playfair Display`, `Plus Jakarta Sans`, `JetBrains Mono`).
-- **Dual Theme Support**: Dark Luxury mode (default) and Light Ivory/Alabaster mode.
-- **5-Step Consulting Framework**: Interactive stepper detailing *Discover*, *Diagnose*, *Design*, *Develop*, and *Deliver*.
-- **Quality Audits Showcase**: 8-Point Audit Scope, Simulated Department Quality Scorecard, and sample 30/60/90-Day Improvement Roadmap modal.
-- **Training & Leadership Hub**: 8 core training programmes with live deep-dive curriculum viewer.
-- **Interactive Operations Diagnostic**: 5-question multi-step quiz calculating an instant Operational Maturity Score (0–100), gap analysis, and tailored 30-day recommendations.
-- **ROI & Value Impact Calculator**: Dynamic sliders computing projected revenue and efficiency uplifts.
-- **Live Regional Status**: Real-time Singapore clock (SGT, UTC+8) and business availability indicator.
-- **100% Mobile Friendly**: Responsive layout with touch-friendly slide-over drawer navigation.
+- **Dynamic Single-Page Application (SPA)**: Instant view transitions with clean active state management and URL hash synchronization. Clicking a menu item displays only its related content view.
+- **Strict Light Executive Theme**: Clean, high-contrast light theme engineered for corporate stakeholders, owners, and general managers (dark mode removed).
+- **Streamlined Single-Line Header**: Seven button-type navigation items aligned on a single row without wrapping on desktop screens:
+  1. **About** — Executive overview, 20+ years track record, leadership credentials, and strategic advantage.
+  2. **Quality Audits** — Evidence-based mystery audits, 150+ point evaluation, live interactive scorecard simulator, and Singapore introductory pricing packages.
+  3. **Consulting Framework** — Interactive 5-Step Consulting Framework (*Discover, Diagnose, Design, Develop, Deliver*) + Pre-Opening F&B consulting setup.
+  4. **Training Solutions** — 8-programme training curriculum deep-dive with interactive module breakdown.
+  5. **Education Advisory** — Curriculum reviews, competency frameworks, and masterclasses for Singapore hotel schools.
+  6. **Operations Diagnostic** — 5-question multi-step quiz calculating an instant Operational Maturity Score (0–100), gap analysis, and tailored 30-day priorities.
+  7. **Scope and Disclaimer** — Transparent statutory disclaimer and regulatory boundaries.
+- **Button-Type Navigation Design with Color**: Tactile, modern button pill navigation with rich brand coloring (Vivid Teal `#00afaa` accents, hover elevations, glowing indicator pips, and saturated active button states).
+- **Singapore-Focused Scope**: Tailored exclusively to the Singapore hospitality market (Orchard, Marina Bay, Sentosa, Tanjong Pagar, Robertson Quay, Bugis, Chinatown, City Hall, etc.) with zero foreign locations.
+- **Clean CTA Distribution**: Replaced clutter of repetitive "Get in Touch" buttons with a single strategic header CTA and centralized modal with Singapore district routing.
+- **Interactive Tools & Simulators**:
+  - **Live Quality Audit Scorecard Simulator**: Interactive department scores, mystery inspection benchmarks, and randomized scenario generator.
+  - **8-Programme Training Curriculum Deep-Dive**: Real-time curriculum inspector with module breakdown, target audience, and duration.
+  - **Operations Diagnostic Assessment**: 5-question weighted quiz with maturity scoring and dynamic category gap diagnosis.
+- **Fully Responsive & Mobile-Friendly**: Smooth sliding drawer navigation featuring button-type menu designs for smartphones and tablets.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── index.html                                        # Semantic HTML5 master document
-├── styles.css                                        # Master luxury CSS stylesheet
-├── app.js                                            # Dynamic interactive JavaScript logic
+├── index.html                                        # Semantic HTML5 master document (7 SPA views)
+├── styles.css                                        # Headspring Executive Light CSS design system
+├── app.js                                            # Dynamic interactive JavaScript logic & SPA router
 ├── Gaurav_Pandey_Hospitality_Website_Presentation.pptx # Source presentation
-└── assets/
-    └── images/                                       # High-resolution image assets
-        ├── hero-lobby.jpg
-        ├── gaurav-portrait.jpg
-        ├── quality-audit.jpg
-        ├── training-workshop.jpg
-        └── fnb-dining.jpg
+├── assets/
+│   └── images/                                       # High-resolution optimized image assets
+│       ├── hero-lobby.jpg
+│       ├── gaurav-portrait.jpg
+│       ├── quality-audit.jpg
+│       ├── training-workshop.jpg
+│       └── fnb-dining.jpg
+└── README.md                                         # Project documentation
 ```
 
 ---
 
 ## 🚀 Running Locally
 
-You can open `index.html` directly in any web browser, or start a local static server:
+The local server is running on:
+```
+http://localhost:8080/
+```
+
+To run manually at any time:
 
 ```bash
 # Using Python
@@ -49,5 +65,3 @@ python -m http.server 8080
 # Or using Node.js
 npx serve .
 ```
-
-Open [http://localhost:8080](http://localhost:8080) in your browser.

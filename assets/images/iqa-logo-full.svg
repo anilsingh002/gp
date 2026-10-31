@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 280" width="100%" height="100%">
+  <defs>
+    <!-- Rich Luxury Metallic Gold Gradient -->
+    <linearGradient id="iqaGoldFull" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcedc4" />
+      <stop offset="20%" stop-color="#dfb76c" />
+      <stop offset="45%" stop-color="#d4af37" />
+      <stop offset="70%" stop-color="#b68835" />
+      <stop offset="90%" stop-color="#e2bf76" />
+      <stop offset="100%" stop-color="#9d7122" />
+    </linearGradient>
+
+    <filter id="fullLogoShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#011e41" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <g id="iqa-full-emblem" filter="url(#fullLogoShadow)">
+    <!-- ==================== TOP: SHIELD CREST ==================== -->
+    <g transform="translate(70, 8) scale(0.75)">
+      <!-- Outer Shield Border -->
+      <path d="M 80,12 
+               C 63,15 44,12 24,16 
+               C 20,17 19,20 19,24 
+               C 20,50 22,86 36,117 
+               C 48,142 66,160 80,170 
+               C 94,160 112,142 124,117 
+               C 138,86 140,50 141,24 
+               C 141,20 140,17 136,16 
+               C 116,12 97,15 80,12 Z" 
+            fill="none" 
+            stroke="url(#iqaGoldFull)" 
+            stroke-width="4.5" 
+            stroke-linejoin="round" 
+            stroke-linecap="round" />
+
+      <!-- Inner Shield Border -->
+      <path d="M 80,22 
+               C 65,24 48,21 31,25 
+               C 29,26 28,29 28,33 
+               C 29,55 31,88 44,114 
+               C 54,135 70,150 80,159 
+               C 90,150 106,135 116,114 
+               C 129,88 131,55 132,33 
+               C 132,29 131,26 129,25 
+               C 112,21 95,24 80,22 Z" 
+            fill="none" 
+            stroke="url(#iqaGoldFull)" 
+            stroke-width="2.2" 
+            stroke-linejoin="round" 
+            stroke-linecap="round" />
+
+      <!-- IQA inside Shield -->
+      <g fill="url(#iqaGoldFull)">
+        <!-- I -->
+        <path d="M 43,56 L 53,56 L 53,59 L 49.5,59 L 49.5,88 L 53,88 L 53,91 L 43,91 L 43,88 L 46.5,88 L 46.5,59 L 43,59 Z" />
+        <!-- Q -->
+        <path d="M 79,53 C 69,53 61.5,61.5 61.5,73.5 C 61.5,85.5 69,94 79,94 C 82.5,94 85.8,92.8 88.5,90.5 C 90.5,93.5 94.5,96.8 100,97.8 C 103,98.3 106,97.8 109,96.8 L 108,94 C 105,94.8 101,93.8 97.5,90 C 97.8,88.5 98,86.5 98,84.5 C 98,82.5 97.8,80.5 97.2,78.8 C 94,83.5 88.5,86 82.5,86 C 74.5,86 69,80 69,73.5 C 69,64.5 74.5,59 82.5,59 C 88.5,59 93.5,63 95.8,68.8 C 97.2,64 95.5,59 91.5,56 C 88,54 83.5,53 79,53 Z M 80,61 C 75.5,61 72,66 72,73.5 C 72,81 75.5,84.5 80,84.5 C 84.5,84.5 88,81 88,73.5 C 88,66 84.5,61 80,61 Z" />
+        <!-- A -->
+        <path d="M 111,56 L 116,56 L 127.5,89 L 131,89 L 131,91.5 L 121,91.5 L 121,89 L 124.5,89 L 122,81.5 L 110,81.5 L 107.5,89 L 111,89 L 111,91.5 L 101,91.5 L 101,89 L 104.5,89 L 111,56 Z M 116,63.5 L 111.5,78.5 L 120.5,78.5 Z" />
+      </g>
+    </g>
+
+    <!-- ==================== MIDDLE: LARGE I Q A WORDMARK ==================== -->
+    <g transform="translate(24, 155)">
+      <!-- Letter I -->
+      <path d="M 12,12 L 36,12 L 36,17 L 27,17 L 27,51 L 36,51 L 36,56 L 12,56 L 12,51 L 21,51 L 21,17 L 12,17 Z" 
+            fill="url(#iqaGoldFull)" />
+
+      <!-- Letter Q with Signature Calligraphic Flourish -->
+      <path d="M 88,10 
+               C 68,10 52,24 52,43 
+               C 52,60.5 65.5,73 84,74.6 
+               C 77.5,78.8 69.5,80.5 63,79.5 
+               C 60,79.1 57.5,78.5 55,77.5 
+               L 54.5,80.2 
+               C 61,83.8 72,85.2 84.5,82.5 
+               C 101,78.8 118,67.5 144,66 
+               C 155,65.4 165,67.2 173,71.2 
+               L 175,68.5 
+               C 166,63.8 154.5,61.4 143,61.8 
+               C 125,62.5 110,72 98,74.8 
+               C 106,71.8 113,65.5 117,57 
+               C 122,46.5 121,35 116,26 
+               C 110,15 100,10 88,10 Z 
+               M 88,17.5 
+               C 102,17.5 111,28 111,43 
+               C 111,57.5 102,68 88,68 
+               C 74,68 64.5,57.5 64.5,43 
+               C 64.5,28 74,17.5 88,17.5 Z" 
+            fill="url(#iqaGoldFull)" />
+
+      <!-- Letter A -->
+      <path d="M 148,12 L 158,12 L 180,51 L 188,51 L 188,56 L 170,56 L 170,51 L 175,51 L 170.5,42.5 L 147.5,42.5 L 143,51 L 148,51 L 148,56 L 130,56 L 130,51 L 135,51 L 148,12 Z 
+               M 158,20 L 150,37 L 166.5,37 Z" 
+            fill="url(#iqaGoldFull)" />
+    </g>
+
+    <!-- ==================== BOTTOM: HOSPITALITY ADVISORY ==================== -->
+    <text x="130" y="260" 
+          text-anchor="middle"
+          font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="11.5" 
+          font-weight="700" 
+          letter-spacing="5.5" 
+          fill="url(#iqaGoldFull)">
+      HOSPITALITY ADVISORY
+    </text>
+  </g>
+</svg>

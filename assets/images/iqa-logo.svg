@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 72" width="100%" height="100%">
+  <defs>
+    <!-- Radiant Multi-Stop Specular Metallic Gold Gradient -->
+    <linearGradient id="iqaGoldFoil" x1="0%" y1="0%" x2="100%" y2="90%">
+      <stop offset="0%" stop-color="#fff8e1" />
+      <stop offset="12%" stop-color="#f5d688" />
+      <stop offset="28%" stop-color="#dfb76c" />
+      <stop offset="48%" stop-color="#b68835" />
+      <stop offset="68%" stop-color="#e8c779" />
+      <stop offset="85%" stop-color="#9a6e1f" />
+      <stop offset="100%" stop-color="#caa04d" />
+    </linearGradient>
+
+    <!-- Deep warm contour gradient for fine details -->
+    <linearGradient id="iqaGoldDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfb76c" />
+      <stop offset="50%" stop-color="#a87922" />
+      <stop offset="100%" stop-color="#dfb76c" />
+    </linearGradient>
+
+    <!-- Subtle embossed foil drop shadow for crisp definition on light & dark -->
+    <filter id="iqaEmbossShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.8" flood-color="#1a1202" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <g id="iqa-master-logo" filter="url(#iqaEmbossShadow)">
+    <!-- ==================== LEFT: REFINED SHIELD CREST ==================== -->
+    <g transform="translate(6, 7) scale(0.34)">
+      <!-- Outer Heraldic Shield with Flared Ears & Peak -->
+      <path d="M 80,10 
+               C 62,13 42,10 23,15 
+               C 19,16 18,19 18,23 
+               C 19,51 22,89 36,120 
+               C 48,146 66,163 80,172 
+               C 94,163 112,146 124,120 
+               C 138,89 141,51 142,23 
+               C 142,19 141,16 137,15 
+               C 118,10 98,13 80,10 Z" 
+            fill="none" 
+            stroke="url(#iqaGoldFoil)" 
+            stroke-width="5" 
+            stroke-linejoin="round" 
+            stroke-linecap="round" />
+
+      <!-- Inner Shield Contour -->
+      <path d="M 80,21 
+               C 64,23 47,20 30,24 
+               C 28,25 27,28 27,32 
+               C 28,56 30,90 43,117 
+               C 53,138 69,152 80,161 
+               C 91,152 107,138 117,117 
+               C 130,90 132,56 133,32 
+               C 133,28 132,25 130,24 
+               C 113,20 96,23 80,21 Z" 
+            fill="none" 
+            stroke="url(#iqaGoldFoil)" 
+            stroke-width="2.2" 
+            stroke-linejoin="round" 
+            stroke-linecap="round" />
+
+      <!-- Centered Monogram IQA in Shield -->
+      <g fill="url(#iqaGoldFoil)">
+        <!-- Letter I -->
+        <path d="M 43,56 L 53,56 L 53,59 L 49.5,59 L 49.5,88 L 53,88 L 53,91 L 43,91 L 43,88 L 46.5,88 L 46.5,59 L 43,59 Z" />
+        <!-- Letter Q -->
+        <path d="M 79,53 C 69,53 61.5,61.5 61.5,73.5 C 61.5,85.5 69,94 79,94 C 82.5,94 85.8,92.8 88.5,90.5 C 90.5,93.5 94.5,96.8 100,97.8 C 103,98.3 106,97.8 109,96.8 L 108,94 C 105,94.8 101,93.8 97.5,90 C 97.8,88.5 98,86.5 98,84.5 C 98,82.5 97.8,80.5 97.2,78.8 C 94,83.5 88.5,86 82.5,86 C 74.5,86 69,80 69,73.5 C 69,64.5 74.5,59 82.5,59 C 88.5,59 93.5,63 95.8,68.8 C 97.2,64 95.5,59 91.5,56 C 88,54 83.5,53 79,53 Z M 80,61 C 75.5,61 72,66 72,73.5 C 72,81 75.5,84.5 80,84.5 C 84.5,84.5 88,81 88,73.5 C 88,66 84.5,61 80,61 Z" />
+        <!-- Letter A -->
+        <path d="M 111,56 L 116,56 L 127.5,89 L 131,89 L 131,91.5 L 121,91.5 L 121,89 L 124.5,89 L 122,81.5 L 110,81.5 L 107.5,89 L 111,89 L 111,91.5 L 101,91.5 L 101,89 L 104.5,89 L 111,56 Z M 116,63.5 L 111.5,78.5 L 120.5,78.5 Z" />
+      </g>
+    </g>
+
+    <!-- ==================== RIGHT: WORDMARK & SUBTITLE ==================== -->
+    <g transform="translate(66, 0)">
+      <!-- Letter I -->
+      <path d="M 6,14 L 23,14 L 23,18 L 16.5,18 L 16.5,42 L 23,42 L 23,46 L 6,46 L 6,42 L 12.5,42 L 12.5,18 L 6,18 Z" 
+            fill="url(#iqaGoldFoil)" />
+
+      <!-- Letter Q with Signature Calligraphic Extended Flourish -->
+      <path d="M 52,12 
+               C 38,12 28,21.5 28,34.5 
+               C 28,47 37.5,56 50,57.3 
+               C 45.8,60.2 41,61.5 36.5,60.8 
+               C 34.5,60.5 33,60.1 31.8,59.6 
+               L 31.2,61.5 
+               C 35.5,64 43,65 51.5,63.2 
+               C 62.5,60.8 74.5,53.2 96,52.2 
+               C 106,51.8 115.5,53.4 123,56.8 
+               L 124.2,54.7 
+               C 117.5,51 109,49.2 99,49.5 
+               C 87,50 76.5,56.5 68.5,58.2 
+               C 74,56.2 78.5,52 81.5,46.2 
+               C 84.8,39 84.5,31 80.8,24.2 
+               C 76.5,16.2 68.5,12 52,12 Z 
+               M 52,17.2 
+               C 62,17.2 68,24.2 68,34.5 
+               C 68,44.5 62,51.8 52,51.8 
+               C 42,51.8 36,44.5 36,34.5 
+               C 36,24.2 42,17.2 52,17.2 Z" 
+            fill="url(#iqaGoldFoil)" />
+
+      <!-- Letter A -->
+      <path d="M 102,14 L 109.5,14 L 126,42 L 131,42 L 131,46 L 116.5,46 L 116.5,42 L 120.5,42 L 117.5,36 L 100.5,36 L 97.5,42 L 101.5,42 L 101.5,46 L 88,46 L 88,42 L 92,42 L 102,14 Z 
+               M 109,19.5 L 102.5,32.2 L 115.2,32.2 Z" 
+            fill="url(#iqaGoldFoil)" />
+
+      <!-- Subtitle: HOSPITALITY ADVISORY -->
+      <text x="6" y="63" 
+            font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="8.4" 
+            font-weight="700" 
+            letter-spacing="2.8" 
+            fill="url(#iqaGoldFoil)">
+        HOSPITALITY ADVISORY
+      </text>
+    </g>
+  </g>
+</svg>

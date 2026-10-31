@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 180" width="100%" height="100%">
+  <defs>
+    <!-- Radiant Multi-Stop Specular Metallic Gold Gradient -->
+    <linearGradient id="iqaCrestGold" x1="0%" y1="0%" x2="100%" y2="90%">
+      <stop offset="0%" stop-color="#fff8e1" />
+      <stop offset="15%" stop-color="#f5d688" />
+      <stop offset="32%" stop-color="#dfb76c" />
+      <stop offset="50%" stop-color="#b68835" />
+      <stop offset="70%" stop-color="#e8c779" />
+      <stop offset="85%" stop-color="#9a6e1f" />
+      <stop offset="100%" stop-color="#caa04d" />
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow for 3D Emboss Effect -->
+    <filter id="crestShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#011e41" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <g filter="url(#crestShadow)">
+    <!-- Outer Shield Border -->
+    <path d="M 80,10 
+             C 62,13 42,10 23,15 
+             C 19,16 18,19 18,23 
+             C 19,51 22,89 36,120 
+             C 48,146 66,163 80,172 
+             C 94,163 112,146 124,120 
+             C 138,89 141,51 142,23 
+             C 142,19 141,16 137,15 
+             C 118,10 98,13 80,10 Z" 
+          fill="none" 
+          stroke="url(#iqaCrestGold)" 
+          stroke-width="4.6" 
+          stroke-linejoin="round" 
+          stroke-linecap="round" />
+
+    <!-- Inner Shield Border -->
+    <path d="M 80,21 
+             C 64,23 47,20 30,24 
+             C 28,25 27,28 27,32 
+             C 28,56 30,90 43,117 
+             C 53,138 69,152 80,161 
+             C 91,152 107,138 117,117 
+             C 130,90 132,56 133,32 
+             C 133,28 132,25 130,24 
+             C 113,20 96,23 80,21 Z" 
+          fill="none" 
+          stroke="url(#iqaCrestGold)" 
+          stroke-width="2.2" 
+          stroke-linejoin="round" 
+          stroke-linecap="round" />
+
+    <!-- Monogram: IQA inside the Shield -->
+    <g fill="url(#iqaCrestGold)">
+      <!-- Letter I -->
+      <path d="M 43,56 L 53,56 L 53,59 L 49.5,59 L 49.5,88 L 53,88 L 53,91 L 43,91 L 43,88 L 46.5,88 L 46.5,59 L 43,59 Z" />
+
+      <!-- Letter Q with Extended Tail -->
+      <path d="M 79,53 
+               C 69,53 61.5,61.5 61.5,73.5 
+               C 61.5,85.5 69,94 79,94 
+               C 82.5,94 85.8,92.8 88.5,90.5 
+               C 90.5,93.5 94.5,96.8 100,97.8 
+               C 103,98.3 106,97.8 109,96.8 
+               L 108,94 
+               C 105,94.8 101,93.8 97.5,90 
+               C 97.8,88.5 98,86.5 98,84.5 
+               C 98,82.5 97.8,80.5 97.2,78.8 
+               C 94,83.5 88.5,86 82.5,86 
+               C 74.5,86 69,80 69,73.5 
+               C 69,64.5 74.5,59 82.5,59 
+               C 88.5,59 93.5,63 95.8,68.8 
+               C 97.2,64 95.5,59 91.5,56 
+               C 88,54 83.5,53 79,53 Z 
+               M 80,61 
+               C 75.5,61 72,66 72,73.5 
+               C 72,81 75.5,84.5 80,84.5 
+               C 84.5,84.5 88,81 88,73.5 
+               C 88,66 84.5,61 80,61 Z" />
+
+      <!-- Letter A -->
+      <path d="M 111,56 L 116,56 L 127.5,89 L 131,89 L 131,91.5 L 121,91.5 L 121,89 L 124.5,89 L 122,81.5 L 110,81.5 L 107.5,89 L 111,89 L 111,91.5 L 101,91.5 L 101,89 L 104.5,89 L 111,56 Z 
+               M 116,63.5 L 111.5,78.5 L 120.5,78.5 Z" />
+    </g>
+  </g>
+</svg>
