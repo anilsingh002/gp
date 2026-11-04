@@ -1,6 +1,6 @@
-# IQA Hospitality Advisory — Independent Quality & Operations Advisory • Singapore
+# IQA Hospitality Advisory — Independent Quality & Operations Advisory 
 
-A modern web application built for **IQA Hospitality Advisory**, an independent hospitality quality audits, operational excellence, and leadership training advisory firm based in **Singapore**.
+A modern web application built for **IQA Hospitality Advisory**, an independent hospitality quality audits, operational excellence, and leadership training advisory firm specializing in independent hospitality quality and performance advisory.
 
 > **Brand Positioning:** *"Better Operations. Better People. Better Guest Experiences."*  
 > **Aesthetic Design:** Inspired by the executive corporate aesthetic of **Headspring Executive** (Deep Navy `#011e41`, Vivid Teal `#00afaa`, Warm Alabaster, and Crisp White).
@@ -13,15 +13,15 @@ A modern web application built for **IQA Hospitality Advisory**, an independent 
 - **Strict Light Executive Theme**: Clean, high-contrast light theme engineered for corporate stakeholders, owners, and general managers (dark mode removed).
 - **Streamlined Single-Line Header**: Seven button-type navigation items aligned on a single row without wrapping on desktop screens:
   1. **About** — Executive overview, 20+ years track record, leadership credentials, and strategic advantage.
-  2. **Quality Audits** — Evidence-based mystery audits, 150+ point evaluation, live interactive scorecard simulator, and Singapore introductory pricing packages.
+  2. **Quality Audits** — Evidence-based mystery audits, 150+ point evaluation, live interactive scorecard simulator, and introductory pricing packages.
   3. **Consulting Framework** — Interactive 5-Step Consulting Framework (*Discover, Diagnose, Design, Develop, Deliver*) + Pre-Opening F&B consulting setup.
   4. **Training Solutions** — 8-programme training curriculum deep-dive with interactive module breakdown.
-  5. **Education Advisory** — Curriculum reviews, competency frameworks, and masterclasses for Singapore hotel schools.
+  5. **Education Advisory** — Curriculum reviews, competency frameworks, and masterclasses for hotel schools.
   6. **Operations Diagnostic** — 5-question multi-step quiz calculating an instant Operational Maturity Score (0–100), gap analysis, and tailored 30-day priorities.
   7. **Scope and Disclaimer** — Transparent statutory disclaimer and regulatory boundaries.
 - **Button-Type Navigation Design with Color**: Tactile, modern button pill navigation with rich brand coloring (Vivid Teal `#00afaa` accents, hover elevations, glowing indicator pips, and saturated active button states).
-- **Singapore-Focused Scope**: Tailored exclusively to the Singapore hospitality market (Orchard, Marina Bay, Sentosa, Tanjong Pagar, Robertson Quay, Bugis, Chinatown, City Hall, etc.) with zero foreign locations.
-- **Clean CTA Distribution**: Replaced clutter of repetitive "Get in Touch" buttons with a single strategic header CTA and centralized modal with Singapore district routing.
+- **Comprehensive Scope**: Tailored for independent hotels, boutique properties, and premium dining venues.
+- **Clean CTA Distribution**: Replaced clutter of repetitive "Get in Touch" buttons with a single strategic header CTA and centralized modal with property location routing.
 - **Interactive Tools & Simulators**:
   - **Live Quality Audit Scorecard Simulator**: Interactive department scores, mystery inspection benchmarks, and randomized scenario generator.
   - **8-Programme Training Curriculum Deep-Dive**: Real-time curriculum inspector with module breakdown, target audience, and duration.

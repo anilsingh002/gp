@@ -1,5 +1,5 @@
 /**
- * IQA HOSPITALITY ADVISORY | Singapore
+ * IQA HOSPITALITY ADVISORY
  * Master Interactive Logic & Dynamic Web Application Scripts
  */
 
@@ -27,36 +27,43 @@ function initPageViewSwitcher() {
 
   const viewSeoData = {
     'about': {
-      title: 'IQA Hospitality Advisory | Independent Quality & Operations Advisory • Singapore',
-      description: 'Better Operations. Better People. Better Guest Experiences. Independent hospitality quality audits, operational excellence, and leadership training in Singapore.'
+      title: 'IQA Hospitality Advisory | Independent Quality & Operations Advisory',
+      description: 'Better Operations. Better People. Better Guest Experiences. Independent hospitality quality audits, operational excellence, and leadership training.'
     },
     'audits': {
-      title: 'Independent Quality Audits & Scorecards | IQA Hospitality Advisory • Singapore',
-      description: 'Evidence-based quality audits for independent hotels and dining venues in Singapore. Unannounced mystery-guest evaluations, weighted scorecards, and 30/60/90-day roadmaps.'
+      title: 'Independent Quality Audits & Scorecards | IQA Hospitality Advisory',
+      description: 'Evidence-based quality audits for independent hotels and dining venues. Unannounced mystery-guest evaluations, weighted scorecards, and 30/60/90-day roadmaps.'
     },
     'framework': {
       title: '5-Phase Consulting Framework & Pre-Opening F&B | IQA Hospitality Advisory',
-      description: 'Structured 5-step methodology (Discover, Diagnose, Design, Develop, Deliver) and pre-opening restaurant consulting for Singapore properties.'
+      description: 'Structured 5-step methodology (Discover, Diagnose, Design, Develop, Deliver) and pre-opening restaurant consulting for hospitality properties.'
     },
     'training': {
       title: 'Core Hospitality Training & Leadership Solutions | IQA Hospitality Advisory',
-      description: 'Supervisory excellence and practical floor leadership programmes designed for Singapore hospitality teams. Service excellence, guest recovery, and train-the-trainer.'
+      description: 'Supervisory excellence and practical floor leadership programmes designed for hospitality teams. Service excellence, guest recovery, and train-the-trainer.'
     },
     'education': {
       title: 'Hospitality Education Advisory & Curriculum Review | IQA Hospitality Advisory',
-      description: 'Support for hotel schools, universities, and vocational institutes in Singapore. Practical competency frameworks, curriculum reviews, and guest masterclasses.'
+      description: 'Support for hotel schools, universities, and vocational institutes. Practical competency frameworks, curriculum reviews, and guest masterclasses.'
     },
     'diagnostic': {
       title: 'Operations Diagnostic & Audit Readiness Index | IQA Hospitality Advisory',
-      description: 'Assess your Singapore property operational maturity across SOPs, guest journeys, supervisory routines, and audit readiness in under 2 minutes.'
+      description: 'Assess your property operational maturity across SOPs, guest journeys, supervisory routines, and audit readiness in under 2 minutes.'
     },
     'disclaimer': {
       title: 'Scope of Engagement and Statutory Disclaimer | IQA Hospitality Advisory',
-      description: 'Clear statutory parameters governing IQA Hospitality Advisory consulting engagements, quality audits, training services, and statutory compliance in Singapore.'
+      description: 'Clear statutory parameters governing IQA Hospitality Advisory consulting engagements, quality audits, training services, and statutory compliance.'
     }
   };
 
   function switchView(targetViewId) {
+    if (targetViewId === 'diagnostic') {
+      targetViewId = 'framework';
+      setTimeout(() => {
+        const diagElem = document.getElementById('framework-diagnostic-section');
+        if (diagElem) diagElem.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    }
     // Default to 'about' if invalid
     const targetElement = document.getElementById(`view-${targetViewId}`);
     if (!targetElement) targetViewId = 'about';
@@ -277,7 +284,7 @@ function initFrameworkStepper() {
    ========================================================================== */
 const sampleAuditScenarios = [
   {
-    title: "Simulated Boutique Heritage Hotel (Singapore — 80 Keys)",
+    title: "Simulated Boutique Heritage Hotel (80 Keys)",
     overall: "89.4% (Tier 1 Excellence)",
     departments: [
       { name: "Front Office & Concierge", score: 94 },
@@ -289,7 +296,7 @@ const sampleAuditScenarios = [
     ]
   },
   {
-    title: "Simulated Sentosa Luxury Resort (Singapore — 140 Keys)",
+    title: "Simulated Island Resort (140 Keys)",
     overall: "84.2% (Strong / Moderate Gaps)",
     departments: [
       { name: "Front Office & Concierge", score: 90 },
@@ -301,7 +308,7 @@ const sampleAuditScenarios = [
     ]
   },
   {
-    title: "Simulated High-Volume Urban Hotel (Singapore — 280 Keys)",
+    title: "Simulated High-Volume Urban Hotel (280 Keys)",
     overall: "91.8% (Benchmark Tier)",
     departments: [
       { name: "Front Office Check-in Speed", score: 96 },
@@ -370,9 +377,9 @@ const trainingProgramsData = {
     badge: 'Frontline & Guest Contact Teams',
     title: 'Service Excellence & Guest Journey Mastery',
     duration: '1 to 2 Days Interactive Workshop',
-    desc: 'Empowering service teams in Singapore properties with intuitive guest anticipation, refined verbal etiquette, empathetic body language, and signature brand storytelling.',
+    desc: 'Empowering service teams with intuitive guest anticipation, refined verbal etiquette, empathetic body language, and signature brand storytelling.',
     outcomes: [
-      'Mastering first-impression psychology and luxury greeting standards',
+      'Mastering first-impression psychology and refined greeting standards',
       'Reading unstated guest cues, micro-expressions, and preferences',
       'Elevating sequence of service from mechanical tasks to memorable moments',
       'Personal empowerment standards for instant issue de-escalation'
@@ -382,7 +389,7 @@ const trainingProgramsData = {
     badge: 'Department Heads, GMs & Senior Managers',
     title: 'Hospitality Leadership & Strategic Agility',
     duration: '2-Day Executive Masterclass',
-    desc: 'Developing visionary operational leaders capable of breaking departmental silos, optimizing labor productivity in Singapore, and sustaining rigorous service culture.',
+    desc: 'Developing visionary operational leaders capable of breaking departmental silos, optimizing labor productivity, and sustaining rigorous service culture.',
     outcomes: [
       'Strategic labor modeling and operational cost control without guest compromise',
       'Cross-departmental collaboration between F&B, Rooms, and Sales',
@@ -430,7 +437,7 @@ const trainingProgramsData = {
     badge: 'Departmental Trainers & Quality Champions',
     title: 'Train-the-Trainer: Sustainable In-House Capability',
     duration: '3-Day Certification Program',
-    desc: 'Certifying internal champions in Singapore properties to design, deliver, and evaluate micro-training sessions, ensuring operational standards live perpetually.',
+    desc: 'Certifying internal champions to design, deliver, and evaluate micro-training sessions, ensuring operational standards live perpetually.',
     outcomes: [
       'Adult learning theory simplified for fast-paced hospitality teams',
       'Designing engaging 15-minute standard refresher modules',
@@ -493,7 +500,7 @@ function initTrainingSelector() {
     const cta = deepdiveBody.querySelector('[data-training-inquire]');
     if (cta) {
       cta.addEventListener('click', () => {
-        openContactModalWithPrefill('Training & Leadership Development', `I am interested in scheduling or discussing the "${data.title}" programme for our Singapore property team.`);
+        openContactModalWithPrefill('Training & Leadership Development', `I am interested in scheduling or discussing the "${data.title}" programme for our property team.`);
       });
     }
   }
@@ -614,7 +621,7 @@ function initDiagnosticQuiz() {
     let actions = [];
 
     if (finalScore >= 85) {
-      tierLabel = 'Tier 1: Luxury Benchmark Excellence';
+      tierLabel = 'Tier 1: Benchmark Excellence';
       narrativeText = `Your property demonstrates exceptional operational discipline and benchmark-level consistency. Opportunities remain in institutionalizing supervisor micro-briefings and fine-tuning guest emotional anticipation during peak periods.`;
       actions = [
         'Calibrate internal supervisory scorecards to prevent standards drift.',
@@ -681,7 +688,7 @@ function initDiagnosticQuiz() {
       const tier = document.getElementById('final-score-tier')?.textContent || '';
       openContactModalWithPrefill(
         'Independent Quality Audit',
-        `I have completed the Operations Diagnostic quiz with a Maturity Score of ${score}/100 (${tier}). I would like to schedule a 30-minute advisory debrief for our Singapore property.`
+        `I have completed the Operations Diagnostic quiz with a Maturity Score of ${score}/100 (${tier}). I would like to schedule a 30-minute advisory debrief for our property.`
       );
     });
   }
@@ -747,7 +754,7 @@ function initModals() {
   if (modalAuditCta) {
     modalAuditCta.addEventListener('click', () => {
       closeModal(auditModal);
-      openContactModalWithPrefill('Independent Quality Audit', 'I would like to commission an Independent Quality Audit for our property in Singapore.');
+      openContactModalWithPrefill('Independent Quality Audit', 'I would like to commission an Independent Quality Audit for our property.');
     });
   }
 
@@ -755,7 +762,7 @@ function initModals() {
   document.querySelectorAll('[data-open-contact-prefill]').forEach(btn => {
     btn.addEventListener('click', () => {
       const serviceName = btn.getAttribute('data-open-contact-prefill');
-      openContactModalWithPrefill(serviceName, `I would like to explore your ${serviceName} advisory services for our property in Singapore.`);
+      openContactModalWithPrefill(serviceName, `I would like to explore your ${serviceName} advisory services for our property.`);
     });
   });
 

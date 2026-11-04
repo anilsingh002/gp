@@ -1,5 +1,5 @@
 /* ==========================================================================
-   IQA HOSPITALITY ADVISORY | Singapore
+   IQA HOSPITALITY ADVISORY
    Master Stylesheet — Headspring Executive Corporate Light Theme
    Inspired by: https://www.headspringexecutive.com/
    ========================================================================== */
@@ -934,7 +934,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 32%;
+  object-position: center 15%;
   transition: transform 0.6s ease;
 }
 
@@ -993,7 +993,7 @@ ul {
   font-weight: 600;
 }
 
-.singapore-flag {
+.regional-flag {
   font-size: 1.4rem;
 }
 
@@ -2440,7 +2440,7 @@ button,
     border-radius: var(--radius-sm);
   }
 
-  .luxury-pricing-table {
+  .pricing-table {
     min-width: 500px;
   }
 
@@ -2607,7 +2607,7 @@ button,
   }
 
   .executive-portrait {
-    object-position: center 30%;
+    object-position: center 12%;
   }
 
   .executive-name {
@@ -2722,14 +2722,14 @@ button,
   border: 1px solid var(--border-light);
 }
 
-.luxury-pricing-table {
+.pricing-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
   font-size: 0.9rem;
 }
 
-.luxury-pricing-table th {
+.pricing-table th {
   background: var(--hse-navy);
   color: #ffffff;
   padding: 16px 20px;
@@ -2739,34 +2739,34 @@ button,
   border-bottom: 2px solid var(--hse-teal);
 }
 
-.luxury-pricing-table th:first-child {
+.pricing-table th:first-child {
   width: 25%;
   background: #02162e;
 }
 
-.luxury-pricing-table td {
+.pricing-table td {
   padding: 14px 20px;
   border-bottom: 1px solid var(--border-light);
   color: var(--text-secondary);
 }
 
-.luxury-pricing-table tr:last-child td {
+.pricing-table tr:last-child td {
   border-bottom: none;
 }
 
-.luxury-pricing-table .feature-label {
+.pricing-table .feature-label {
   font-weight: 700;
   color: var(--text-primary);
   background: rgba(1, 30, 65, 0.02);
 }
 
-.luxury-pricing-table .fee-row td {
+.pricing-table .fee-row td {
   background: rgba(0, 175, 170, 0.06);
   font-weight: 700;
   color: var(--hse-navy);
 }
 
-.luxury-pricing-table .price-val {
+.pricing-table .price-val {
   font-family: var(--font-mono);
   font-size: 1.15rem;
   font-weight: 800;
