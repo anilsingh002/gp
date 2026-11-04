@@ -89,9 +89,10 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 80px;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -101,6 +102,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -727,7 +729,7 @@ ul {
   position: relative;
   background-color: var(--hse-navy);
   color: #ffffff;
-  padding: 32px 0 22px;
+  padding: 22px 0 16px;
   overflow: hidden;
 }
 
@@ -776,7 +778,7 @@ ul {
 .hero-grid {
   display: grid;
   grid-template-columns: 1.25fr 0.85fr;
-  gap: 48px;
+  gap: 32px;
   align-items: center;
 }
 
@@ -926,16 +928,16 @@ ul {
 
 .executive-image-wrap {
   position: relative;
-  height: 350px;
+  height: 380px;
   overflow: hidden;
-  background: #011e41;
+  background: #f8fafc;
 }
 
 .executive-portrait {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: top center;
   transition: transform 0.6s ease;
 }
 
@@ -1026,7 +1028,7 @@ ul {
 
 /* Strategic Advantage Block (Headspring Split Feature) */
 .section {
-  padding: 26px 0;
+  padding: 18px 0;
   position: relative;
 }
 
@@ -2351,11 +2353,11 @@ button,
   }
 
   .section {
-    padding: 28px 0;
+    padding: 18px 0;
   }
 
   .hero-section {
-    padding: 26px 0 20px;
+    padding: 20px 0 16px;
   }
 
   .site-header {
@@ -2458,6 +2460,10 @@ button,
   }
 
   /* Diagnostic Quiz on Mobile */
+  .diagnostic-wrapper {
+    padding: 18px 16px !important;
+  }
+
   .q-options {
     gap: 10px;
   }
@@ -2572,13 +2578,14 @@ button,
   }
 
   .header-logo-img {
-    height: 32px;
-    max-width: 150px;
+    height: 30px;
+    max-width: 135px;
   }
 
   .header-cta {
-    padding: 6px 10px;
-    font-size: 0.75rem;
+    padding: 6px 9px;
+    font-size: 0.72rem;
+    gap: 4px;
   }
 
   .header-cta svg {
@@ -2603,12 +2610,13 @@ button,
   }
 
   .executive-image-wrap {
-    height: 290px;
+    height: 330px;
     border-radius: var(--radius-sm);
+    background: #f8fafc;
   }
 
   .executive-portrait {
-    object-position: center 12%;
+    object-position: top center;
   }
 
   .executive-name {
@@ -2814,8 +2822,8 @@ button,
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 36px 32px;
-  margin-top: 48px;
+  padding: 24px 24px;
+  margin-top: 24px;
   box-shadow: 0 4px 18px rgba(1, 30, 65, 0.04);
 }
 
@@ -2844,8 +2852,8 @@ button,
 
 .fnb-setup-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
 .fnb-setup-card {
@@ -3390,7 +3398,7 @@ button,
 .page-hero-banner {
   background: linear-gradient(135deg, #001229 0%, #011e41 55%, #08264e 100%);
   color: #ffffff;
-  padding: 24px 0 22px;
+  padding: 18px 0 16px;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 175, 170, 0.25);
