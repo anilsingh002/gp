@@ -358,9 +358,9 @@ ul {
 }
 
 .header-logo-img {
-  height: 52px;
+  height: 62px;
   width: auto;
-  max-width: 175px;
+  max-width: 210px;
   display: block;
   object-fit: contain;
   border-radius: 6px;
@@ -376,9 +376,9 @@ ul {
 
 /* Mobile Drawer Logo */
 .drawer-logo-img {
-  height: 52px;
+  height: 62px;
   width: auto;
-  max-width: 190px;
+  max-width: 210px;
   display: block;
   object-fit: contain;
   border-radius: 6px;
@@ -821,6 +821,15 @@ ul {
   letter-spacing: -0.025em;
   color: #ffffff;
   margin-bottom: 18px;
+}
+
+.hero-title-primary {
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  opacity: 0.95;
+  margin-bottom: 2px;
 }
 
 .hero-title-nowrap {
@@ -2293,8 +2302,8 @@ button,
     font-size: 0.8rem;
   }
   .header-logo-img {
-    height: 48px;
-    max-width: 155px;
+    height: 56px;
+    max-width: 185px;
   }
 }
 
@@ -2377,7 +2386,7 @@ button,
   }
 
   .header-logo-img {
-    height: 44px;
+    height: 50px;
     max-width: 175px;
   }
 
@@ -2570,7 +2579,8 @@ button,
 
   .footer-compact-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 8px;
   }
 }
@@ -2590,8 +2600,8 @@ button,
   }
 
   .header-logo-img {
-    height: 40px;
-    max-width: 135px;
+    height: 46px;
+    max-width: 155px;
   }
 
   .header-cta {
@@ -3306,38 +3316,45 @@ button,
   }
 }
 
-/* 4. Ultra-Compact Executive Footer */
+/* 4. Ultra-Compact Executive Footer - Center Aligned */
 .compact-footer {
   background-color: #01142a;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 24px 0 16px;
+  padding: 28px 0 20px;
   margin-top: 0;
+  text-align: center;
 }
 
 .footer-compact-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
 }
 
 .footer-compact-main {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding-bottom: 16px;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding-bottom: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
 }
 
 .f-compact-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .f-compact-brand .footer-logo-img {
-  height: 52px;
+  height: 56px;
   width: auto;
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -3349,12 +3366,14 @@ button,
 .f-compact-nav {
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
 .f-compact-nav a {
-  font-size: 0.825rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: #cbd5e1;
   text-decoration: none;
@@ -3368,7 +3387,10 @@ button,
 .f-compact-contact {
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .f-email-link {
@@ -3384,17 +3406,20 @@ button,
 
 .footer-compact-bottom {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   font-size: 0.75rem;
   color: #94a3b8;
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
+  width: 100%;
 }
 
 .f-bottom-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 

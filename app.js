@@ -386,12 +386,12 @@ const trainingProgramsData = {
     ]
   },
   'hospitality-leadership': {
-    badge: 'Department Heads, GMs & Senior Managers',
+    badge: 'Department Heads & Senior Managers',
     title: 'Hospitality Leadership & Strategic Agility',
     duration: '2-Day Executive Masterclass',
     desc: 'Developing visionary operational leaders capable of breaking departmental silos, optimizing labor productivity, and sustaining rigorous service culture.',
     outcomes: [
-      'Strategic labor modeling and operational cost control without guest compromise',
+      'Strategic tea modelling and operational cost control without guest compromise',
       'Cross-departmental collaboration between F&B, Rooms, and Sales',
       'Transformational coaching techniques for high-retention teams',
       'Designing self-sustaining quality inspection routines'
@@ -429,15 +429,14 @@ const trainingProgramsData = {
     outcomes: [
       'Precision sequence of service: table greeting, order pacing, clearing etiquette',
       'Consultative menu pairing and unobtrusive upselling techniques',
-      'Kitchen pass coordination: expediting speed and order accuracy',
-      'Glassware care and presentation standards'
+      'Kitchen pass coordination: expediting speed and order accuracy'
     ]
   },
   'train-the-trainer': {
     badge: 'Departmental Trainers & Quality Champions',
     title: 'Train-the-Trainer: Sustainable In-House Capability',
     duration: '3-Day Certification Program',
-    desc: 'Certifying internal champions to design, deliver, and evaluate micro-training sessions, ensuring operational standards live perpetually.',
+    desc: 'Equipping internal champions to design, deliver, and evaluate micro-training sessions, ensuring operational standards live perpetually.',
     outcomes: [
       'Adult learning theory simplified for fast-paced hospitality teams',
       'Designing engaging 15-minute standard refresher modules',
