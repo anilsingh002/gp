@@ -47,7 +47,7 @@ function initPageViewSwitcher() {
       description: 'Support for hotel schools, universities, and vocational institutes. Practical competency frameworks, curriculum reviews, and guest masterclasses.'
     },
     'diagnostic': {
-      title: 'Operations Diagnostic & Audit Readiness Index | IQA Hospitality Advisory',
+      title: 'Indicative Self-Assessment & Audit Readiness Index | IQA Hospitality Advisory',
       description: 'Assess your property operational maturity across SOPs, guest journeys, supervisory routines, and audit readiness in under 2 minutes.'
     },
     'disclaimer': {
@@ -491,7 +491,7 @@ function initTrainingSelector() {
       </div>
       <div>
         <button class="btn btn-primary btn-sm btn-block" data-training-inquire="${data.title}">
-          Inquire About This Programme →
+          Inquire About This Programm →
         </button>
       </div>
     `;
@@ -499,7 +499,11 @@ function initTrainingSelector() {
     const cta = deepdiveBody.querySelector('[data-training-inquire]');
     if (cta) {
       cta.addEventListener('click', () => {
-        openContactModalWithPrefill('Training & Leadership Development', `I am interested in scheduling or discussing the "${data.title}" programme for our property team.`);
+        openContactModalWithPrefill(
+          'Training & Leadership Development',
+          `I am interested in scheduling or discussing the "${data.title}" programme for our property team.`,
+          'Inquire About This Programm'
+        );
       });
     }
   }
@@ -573,7 +577,7 @@ function initDiagnosticQuiz() {
     nextBtn.addEventListener('click', () => {
       const radio = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
       if (!radio) {
-        alert('Please select an option to continue the diagnostic.');
+        alert('Please select an option to continue the indicative self-assessment.');
         return;
       }
       userAnswers[`q${currentQuestion}`] = +radio.value;
@@ -686,8 +690,9 @@ function initDiagnosticQuiz() {
       const score = document.getElementById('final-score-num')?.textContent || 'N/A';
       const tier = document.getElementById('final-score-tier')?.textContent || '';
       openContactModalWithPrefill(
-        'Independent Quality Audit',
-        `I have completed the Operations Diagnostic quiz with a Maturity Score of ${score}/100 (${tier}). I would like to schedule a 30-minute advisory debrief for our property.`
+        'Indicative Self-Assessment & Review',
+        `I have completed the Indicative Self-Assessment with an indicative Maturity Score of ${score}/100 (${tier}). I would like to schedule an advisory debrief for our property.`,
+        'Request Advisory Debrief'
       );
     });
   }
@@ -757,11 +762,17 @@ function initModals() {
     });
   }
 
-  // Global prefill triggers across the entire site
+  // Global prefill triggers across the entire site (tracks action source button)
   document.querySelectorAll('[data-open-contact-prefill]').forEach(btn => {
     btn.addEventListener('click', () => {
       const serviceName = btn.getAttribute('data-open-contact-prefill');
-      openContactModalWithPrefill(serviceName, `I would like to explore your ${serviceName} advisory services for our property.`);
+      let actionSource = btn.textContent.replace(/[→↗]/g, '').trim();
+      if (!actionSource) actionSource = 'Get in Touch';
+      openContactModalWithPrefill(
+        serviceName,
+        `I would like to explore your ${serviceName} advisory services for our property.`,
+        actionSource
+      );
     });
   });
 
@@ -794,9 +805,20 @@ function closeModal(modalElem) {
   document.body.style.overflow = '';
 }
 
-function openContactModalWithPrefill(serviceType, messageText) {
+function openContactModalWithPrefill(serviceType, messageText, actionSource = 'Get in Touch') {
   const contactModal = document.getElementById('contact-modal');
   openModal(contactModal);
+
+  // Set action source in hidden input
+  const sourceInput = document.getElementById('contact-source-action');
+  if (sourceInput) {
+    sourceInput.value = actionSource;
+  }
+
+  const modalBadge = document.querySelector('.modal-badge');
+  if (modalBadge) {
+    modalBadge.textContent = actionSource ? `IQA Advisory · ${actionSource}` : 'IQA Hospitality Advisory';
+  }
 
   // Check matching checkbox
   if (serviceType) {
@@ -822,22 +844,113 @@ function initContactForm() {
   const successCard = document.getElementById('form-success-message');
   const resetBtn = document.getElementById('reset-form-btn');
   const userNameElem = document.getElementById('success-user-name');
+  const mailtoBtn = document.getElementById('mailto-direct-btn');
+  const submitBtn = document.getElementById('submit-form-btn');
 
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('contact-name')?.value || 'Guest';
-    const property = document.getElementById('contact-property')?.value || 'Property';
-    const title = document.getElementById('contact-title')?.value || 'Leader';
+    const name = document.getElementById('contact-name')?.value.trim() || 'Valued Partner';
+    const property = document.getElementById('contact-property')?.value.trim() || 'Property';
+    const title = document.getElementById('contact-title')?.value.trim() || 'Hospitality Leader';
+    const email = document.getElementById('contact-email')?.value.trim() || '';
+    const phone = document.getElementById('contact-phone')?.value.trim() || 'Not provided';
+    const location = document.getElementById('contact-location')?.value.trim() || 'Hospitality Venue';
+    const message = document.getElementById('contact-message')?.value.trim() || 'Inquiry initiated via web platform.';
+    const sourceAction = document.getElementById('contact-source-action')?.value.trim() || 'Get in Touch';
 
+    const selectedInterests = [];
+    document.querySelectorAll('input[name="interest"]:checked').forEach(cb => {
+      selectedInterests.push(cb.value);
+    });
+
+    // 1. Construct prefilled mailto URL to anilsingh001@gmail.com
+    const mailtoSubject = encodeURIComponent(`[IQA Advisory - ${sourceAction}] ${name} from ${property}`);
+    const mailtoBody = encodeURIComponent(
+      `IQA HOSPITALITY ADVISORY - CONSULTATION INQUIRY\n` +
+      `===================================================\n\n` +
+      `Action / Triggering Button: ${sourceAction}\n` +
+      `Full Name: ${name}\n` +
+      `Job Title / Role: ${title}\n` +
+      `Property / Venue Name: ${property}\n` +
+      `Location / Property Type: ${location}\n` +
+      `Work Email: ${email}\n` +
+      `Phone / WhatsApp: ${phone}\n` +
+      `Areas of Interest: ${selectedInterests.join(', ') || 'General Consultation'}\n\n` +
+      `Operational Context & Objectives:\n` +
+      `${message}\n\n` +
+      `---------------------------------------------------\n` +
+      `Timestamp: ${new Date().toLocaleString()}\n` +
+      `Recipient: anilsingh001@gmail.com`
+    );
+    const mailtoUrl = `mailto:anilsingh001@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    if (mailtoBtn) {
+      mailtoBtn.href = mailtoUrl;
+    }
+
+    // 2. Visual loading state on button
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Sending Notification to anilsingh001@gmail.com...</span>`;
+    }
+
+    // 3. Asynchronously trigger email to anilsingh001@gmail.com via FormSubmit AJAX
+    const payload = {
+      _subject: `[IQA Advisory - ${sourceAction}] ${name} (${property})`,
+      _replyto: email,
+      _cc: 'anilsingh001@gmail.com',
+      _template: 'table',
+      _captcha: 'false',
+      'Triggered Button / Action': sourceAction,
+      'Full Name': name,
+      'Job Title / Role': title,
+      'Work Email': email,
+      'Phone / WhatsApp': phone,
+      'Property / Venue': property,
+      'Property Type / Location': location,
+      'Areas of Interest': selectedInterests.join(', ') || 'General Advisory',
+      'Operational Context & Objectives': message,
+      'Submission Timestamp': new Date().toLocaleString()
+    };
+
+    try {
+      await fetch('https://formsubmit.co/ajax/anilsingh001@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      console.log('Consultation email triggered successfully to anilsingh001@gmail.com');
+    } catch (err) {
+      console.warn('FormSubmit background notification error (fallback active):', err);
+    }
+
+    // 4. Also trigger local email client
+    setTimeout(() => {
+      try {
+        window.location.href = mailtoUrl;
+      } catch (e) {
+        console.log('Mail client invocation:', e);
+      }
+    }, 450);
+
+    // 5. Update and show success card
     if (userNameElem) {
       userNameElem.textContent = `Thank you, ${name} (${title} at ${property}).`;
     }
 
     form.style.display = 'none';
     if (successCard) successCard.style.display = 'block';
+
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<span>Send Consultation Request</span>`;
+    }
   });
 
   if (resetBtn) {
