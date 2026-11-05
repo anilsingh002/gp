@@ -784,8 +784,8 @@ ul {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.85fr;
-  gap: 32px;
+  grid-template-columns: 1.35fr 0.75fr;
+  gap: 36px;
   align-items: center;
 }
 
@@ -815,12 +815,17 @@ ul {
 }
 
 .hero-title {
-  font-size: clamp(2.3rem, 4.4vw, 3.5rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
   color: #ffffff;
   margin-bottom: 18px;
+}
+
+.hero-title-nowrap {
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .gradient-text {
@@ -2377,7 +2382,7 @@ button,
   }
 
   .hero-title {
-    font-size: 1.85rem;
+    font-size: clamp(1.4rem, 4.2vw, 1.75rem);
     line-height: 1.22;
   }
 
@@ -2600,7 +2605,8 @@ button,
   }
 
   .hero-title {
-    font-size: 1.55rem;
+    font-size: clamp(1.1rem, 5.1vw, 1.35rem);
+    line-height: 1.22;
   }
 
   .hero-lead {
