@@ -472,53 +472,60 @@ const trainingProgramsData = {
 
 function initTrainingSelector() {
   const trainingItems = document.querySelectorAll('.training-card-item');
-  const deepdiveBody = document.getElementById('deepdive-content');
-  if (!deepdiveBody) return;
-
-  function renderDeepdive(key) {
-    const data = trainingProgramsData[key];
-    if (!data) return;
-
-    deepdiveBody.innerHTML = `
-      <div>
-        <span class="deepdive-badge">${data.badge}</span>
-        <h3 class="deepdive-title">${data.title}</h3>
-        <p class="deepdive-desc">${data.desc}</p>
-        <div class="deepdive-outcomes-title">Key Learning Outcomes & Impact</div>
-        <ul class="deepdive-outcomes">
-          ${data.outcomes.map(o => `<li>${o}</li>`).join('')}
-        </ul>
-      </div>
-      <div>
-        <button class="btn btn-primary btn-sm btn-block" data-training-inquire="${data.title}">
-          Inquire About This Programm →
-        </button>
-      </div>
-    `;
-
-    const cta = deepdiveBody.querySelector('[data-training-inquire]');
-    if (cta) {
-      cta.addEventListener('click', () => {
-        openContactModalWithPrefill(
-          'Training & Leadership Development',
-          `I am interested in scheduling or discussing the "${data.title}" programme for our property team.`,
-          'Inquire About This Programm'
-        );
-      });
-    }
-  }
-
-  // Initial render
-  renderDeepdive('service-excellence');
+  if (!trainingItems.length) return;
 
   trainingItems.forEach(item => {
-    item.addEventListener('click', () => {
-      trainingItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-      const key = item.getAttribute('data-program');
-      renderDeepdive(key);
+    item.addEventListener('click', (e) => {
+      // If clicking inside the button or link, do not toggle accordion
+      if (e.target.closest('button') || e.target.closest('a')) return;
+
+      const isCurrentlyActive = item.classList.contains('active');
+
+      // Collapse all other cards
+      trainingItems.forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+          const otherBody = other.querySelector('.t-expanded-body');
+          if (otherBody) otherBody.style.maxHeight = null;
+        }
+      });
+
+      // Toggle current card
+      if (isCurrentlyActive) {
+        item.classList.remove('active');
+        const body = item.querySelector('.t-expanded-body');
+        if (body) body.style.maxHeight = null;
+      } else {
+        item.classList.add('active');
+        const body = item.querySelector('.t-expanded-body');
+        if (body) {
+          body.style.maxHeight = (body.scrollHeight + 30) + 'px';
+        }
+      }
     });
   });
+
+  // Attach inquiry button triggers inside cards
+  document.querySelectorAll('[data-training-inquire]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const progTitle = btn.getAttribute('data-training-inquire');
+      openContactModalWithPrefill(
+        'Training & Leadership Development',
+        `I am interested in scheduling or discussing the "${progTitle}" programme for our property team.`,
+        'Inquire About This Programm'
+      );
+    });
+  });
+
+  // Ensure initial active card is sized properly
+  const initialActive = document.querySelector('.training-card-item.active');
+  if (initialActive) {
+    const initialBody = initialActive.querySelector('.t-expanded-body');
+    if (initialBody) {
+      initialBody.style.maxHeight = (initialBody.scrollHeight + 30) + 'px';
+    }
+  }
 }
 
 

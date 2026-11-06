@@ -374,6 +374,30 @@ ul {
   gap: 8px;
 }
 
+.topbar-right-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topbar-phone {
+  color: #e5f2ed !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.topbar-phone:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+.topbar-sep {
+  opacity: 0.5;
+  color: #a9d1c3;
+}
+
 @media (max-width: 768px) {
   .topbar-container {
     justify-content: center;
@@ -411,7 +435,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  max-width: 1400px;
+  max-width: var(--container-max);
   width: 100%;
 }
 
@@ -481,47 +505,33 @@ ul {
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   white-space: nowrap;
   flex-wrap: nowrap;
   list-style: none;
-  background: rgba(16, 43, 43, 0.04);
-  padding: 4px 6px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--line);
+  background: transparent;
+  padding: 0;
+  margin: 0 0 0 -14px;
+  border: none;
 }
 
-/* Elegant Pill-Style Menu Item Design (Reference Template) */
+/* Elegant Pill-Style Menu Item Design with Increased Font Size & Perfect Left Alignment */
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #3d5150;
-  padding: 8px 18px;
+  color: #243837;
+  padding: 8px 16px;
   position: relative;
   transition: all 0.2s ease;
   cursor: pointer;
   border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
-  gap: 7px;
   white-space: nowrap;
   letter-spacing: -0.01em;
   text-decoration: none;
   background: transparent;
   border: 1px solid transparent;
-}
-
-/* Subtle Colored Accent Pip on Idle */
-.nav-link::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--teal);
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  opacity: 0.6;
 }
 
 /* Hover State: Soft Mint Pill Background with Artisan Teal Text */
@@ -532,12 +542,7 @@ ul {
   transform: translateY(-1px);
 }
 
-.nav-link:hover::before {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-/* Active State: Deep Nordic Pine with Mint Accent Pip */
+/* Active State: Deep Nordic Pine with Mint Accent */
 .nav-link.active {
   color: #ffffff !important;
   font-weight: 700;
@@ -545,13 +550,6 @@ ul {
   border-color: var(--teal);
   box-shadow: 0 2px 10px rgba(16, 43, 43, 0.25);
   transform: translateY(-1px);
-}
-
-.nav-link.active::before {
-  background-color: #a9d1c3;
-  box-shadow: 0 0 8px #a9d1c3;
-  opacity: 1;
-  transform: scale(1.2);
 }
 
 /* Press Active Effect */
@@ -1384,49 +1382,94 @@ ul {
   transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Training Showcase Grid */
-.training-showcase-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 32px;
-  align-items: flex-start;
+/* ==========================================================================
+   VIEW 4: TRAINING SOLUTIONS - INTERACTIVE ACCORDION
+   ========================================================================== */
+.training-accordion-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.training-programs-list {
+.training-methodology-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(16, 43, 43, 0.04);
+}
+
+.t-method-col {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.t-method-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 8px;
+  background: var(--mint);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.t-method-content strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--hse-navy);
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.t-method-content span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  display: block;
+}
+
+.training-accordion-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .training-card-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .training-card-item:hover {
   border-color: var(--teal);
-  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(31, 105, 98, 0.08);
+  transform: translateY(-1px);
 }
 
 .training-card-item.active {
   border-color: var(--teal);
-  background: var(--mint);
-  box-shadow: 0 4px 14px rgba(31, 105, 98, 0.12);
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(31, 105, 98, 0.12);
 }
 
 .t-card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 4px;
+  gap: 14px;
 }
 
 .t-icon {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   flex-shrink: 0;
 }
 
@@ -1435,130 +1478,130 @@ ul {
 }
 
 .t-info h3 {
-  font-size: 1rem;
+  font-size: 1.12rem;
   font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.25;
+  color: var(--hse-navy);
+  line-height: 1.3;
+  margin: 0 0 3px 0;
 }
 
 .t-target {
-  font-size: 0.75rem;
-  color: var(--hse-teal);
+  font-size: 0.82rem;
+  color: var(--teal);
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.t-arrow {
-  color: var(--text-muted);
-  font-weight: 700;
-  transition: transform var(--transition-fast);
+.t-chevron {
+  color: var(--teal);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(31, 105, 98, 0.06);
+  flex-shrink: 0;
 }
 
-.training-card-item.active .t-arrow {
-  color: var(--hse-teal);
-  transform: translateX(4px);
+.training-card-item.active .t-chevron {
+  transform: rotate(180deg);
+  background: var(--mint);
 }
 
 .t-summary {
-  font-size: 0.825rem;
-  color: var(--text-muted);
-  line-height: 1.45;
-  margin-left: 32px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 8px 0 0 46px;
 }
 
-/* Deep Dive Detail Panel (Sticky) */
-.training-deepdive-panel {
-  position: sticky;
-  top: 100px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
+/* Expanded Dynamic Body */
+.t-expanded-body {
+  max-height: 0;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.deepdive-image-wrap {
-  position: relative;
-  height: 180px;
+.t-expanded-inner {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  margin-left: 46px;
 }
 
-.deepdive-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.deepdive-image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(1, 30, 65, 0.2) 0%, rgba(1, 30, 65, 0.8) 100%);
-}
-
-.deepdive-body {
-  padding: 24px;
+.t-meta-row {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
 .deepdive-badge {
   display: inline-block;
-  font-size: 0.725rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--hse-teal);
-  background: var(--hse-teal-soft);
-  padding: 2px 7px;
-  border-radius: var(--radius-xs);
-  margin-bottom: 6px;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  background: var(--mint);
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
-.deepdive-title {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  line-height: 1.3;
+.t-duration-tag {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
 .deepdive-desc {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: var(--hse-navy);
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .deepdive-outcomes-title {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  margin-bottom: 10px;
 }
 
 .deepdive-outcomes {
-  margin-bottom: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
 }
 
 .deepdive-outcomes li {
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  position: relative;
-  padding-left: 18px;
-  margin-bottom: 7px;
   line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
 }
 
 .deepdive-outcomes li::before {
   content: '✓';
-  color: var(--hse-teal);
   position: absolute;
   left: 0;
-  font-weight: 700;
+  top: 0;
+  color: var(--teal);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.t-action-wrap {
+  margin-top: 16px;
 }
 
 /* ==========================================================================
@@ -2385,21 +2428,16 @@ button,
     gap: 10px;
   }
   .nav-list {
-    gap: 5px;
-    padding: 3px 5px;
+    gap: 6px;
+    margin-left: -12px;
   }
   .nav-link {
-    font-size: 0.82rem;
-    padding: 6px 12px;
-    gap: 5px;
+    font-size: 0.95rem;
+    padding: 7px 12px;
   }
   .header-cta {
     padding: 7px 14px;
     font-size: 0.8rem;
-  }
-  .header-logo-img {
-    height: 56px;
-    max-width: 185px;
   }
 }
 
@@ -2436,13 +2474,18 @@ button,
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .training-showcase-grid {
+  .training-methodology-strip {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 12px;
   }
 
-  .training-deepdive-panel {
-    position: static;
+  .deepdive-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .t-summary,
+  .t-expanded-inner {
+    margin-left: 0;
   }
 
   .framework-card-grid {
@@ -3491,15 +3534,27 @@ button,
   flex-wrap: wrap;
 }
 
-.f-email-link {
-  font-size: 0.825rem;
+.f-email-link,
+.f-phone-link {
+  font-size: 0.85rem;
+  font-weight: 600;
   color: #cbd5e1;
   text-decoration: none;
   font-family: var(--font-sans);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast);
 }
 
-.f-email-link:hover {
+.f-email-link:hover,
+.f-phone-link:hover {
   color: var(--hse-teal);
+  text-decoration: underline;
+}
+
+.f-contact-sep {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .footer-compact-bottom {
