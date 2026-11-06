@@ -720,16 +720,16 @@ function initModals() {
   const contactModal = document.getElementById('contact-modal');
   const closeContactBtn = document.getElementById('close-contact-modal');
   const openContactButtons = [
-    document.getElementById('open-contact-modal-btn'),
-    document.getElementById('mobile-contact-btn'),
-    document.getElementById('drawer-contact-item-btn'),
-    document.getElementById('footer-contact-btn')
+    { el: document.getElementById('open-contact-modal-btn'), action: 'Get in Touch' },
+    { el: document.getElementById('mobile-contact-btn'), action: 'Get in Touch' },
+    { el: document.getElementById('drawer-contact-item-btn'), action: 'Get in Touch' },
+    { el: document.getElementById('footer-contact-btn'), action: 'Schedule Briefing' }
   ];
 
-  openContactButtons.forEach(btn => {
-    if (btn) {
-      btn.addEventListener('click', () => {
-        openModal(contactModal);
+  openContactButtons.forEach(item => {
+    if (item.el) {
+      item.el.addEventListener('click', () => {
+        openContactModalWithPrefill(null, null, item.action);
       });
     }
   });
@@ -758,7 +758,7 @@ function initModals() {
   if (modalAuditCta) {
     modalAuditCta.addEventListener('click', () => {
       closeModal(auditModal);
-      openContactModalWithPrefill('Independent Quality Audit', 'I would like to commission an Independent Quality Audit for our property.');
+      openContactModalWithPrefill('Independent Quality Audit', 'I would like to commission an Independent Quality Audit for our property.', 'Commission Audit');
     });
   }
 
@@ -866,7 +866,7 @@ function initContactForm() {
       selectedInterests.push(cb.value);
     });
 
-    // 1. Construct prefilled mailto URL to anilsingh001@gmail.com
+    // 1. Construct prefilled mailto URL to iqahospitalityadvisory@gmail.com
     const mailtoSubject = encodeURIComponent(`[IQA Advisory - ${sourceAction}] ${name} from ${property}`);
     const mailtoBody = encodeURIComponent(
       `IQA HOSPITALITY ADVISORY - CONSULTATION INQUIRY\n` +
@@ -883,9 +883,9 @@ function initContactForm() {
       `${message}\n\n` +
       `---------------------------------------------------\n` +
       `Timestamp: ${new Date().toLocaleString()}\n` +
-      `Recipient: anilsingh001@gmail.com`
+      `Recipient: iqahospitalityadvisory@gmail.com`
     );
-    const mailtoUrl = `mailto:anilsingh001@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+    const mailtoUrl = `mailto:iqahospitalityadvisory@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
     if (mailtoBtn) {
       mailtoBtn.href = mailtoUrl;
@@ -894,14 +894,14 @@ function initContactForm() {
     // 2. Visual loading state on button
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Sending Notification to anilsingh001@gmail.com...</span>`;
+      submitBtn.innerHTML = `<span>Sending Notification to iqahospitalityadvisory@gmail.com...</span>`;
     }
 
-    // 3. Asynchronously trigger email to anilsingh001@gmail.com via FormSubmit AJAX
+    // 3. Asynchronously trigger email to iqahospitalityadvisory@gmail.com via FormSubmit AJAX
     const payload = {
       _subject: `[IQA Advisory - ${sourceAction}] ${name} (${property})`,
       _replyto: email,
-      _cc: 'anilsingh001@gmail.com',
+      _cc: 'iqahospitalityadvisory@gmail.com',
       _template: 'table',
       _captcha: 'false',
       'Triggered Button / Action': sourceAction,
@@ -917,7 +917,7 @@ function initContactForm() {
     };
 
     try {
-      await fetch('https://formsubmit.co/ajax/anilsingh001@gmail.com', {
+      await fetch('https://formsubmit.co/ajax/iqahospitalityadvisory@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -925,7 +925,7 @@ function initContactForm() {
         },
         body: JSON.stringify(payload)
       });
-      console.log('Consultation email triggered successfully to anilsingh001@gmail.com');
+      console.log('Consultation email triggered successfully to iqahospitalityadvisory@gmail.com');
     } catch (err) {
       console.warn('FormSubmit background notification error (fallback active):', err);
     }

@@ -474,7 +474,7 @@ ul {
   display: flex;
   align-items: center;
   flex: 1 1 auto;
-  justify-content: center;
+  justify-content: flex-start;
   min-width: 0;
 }
 
@@ -570,6 +570,7 @@ ul {
   gap: 10px;
   flex-shrink: 0;
   z-index: 2;
+  margin-left: auto;
 }
 
 .header-cta {
@@ -675,6 +676,13 @@ ul {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+}
+
+.drawer-brand-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--hse-navy);
+  letter-spacing: -0.01em;
 }
 
 .close-drawer {
